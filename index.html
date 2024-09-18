@@ -26,13 +26,13 @@
                 <input type="number" class="form-control" id="gst" name="gst">
             </div>
             <div class="mb-3">
-                <label for="referralFees" class="form-label">Referral Fees:</label>
-                <input type="number" class="form-control" id="referralFees" name="referralFees">
+                <label for="amazonFees" class="form-label">Total Amazon Fees:</label>
+                <input type="number" class="form-control" id="amazonFees" name="amazonFees">
             </div>
-            <div class="mb-3">
+<!--             <div class="mb-3">
                 <label for="closingFees" class="form-label">Closing Fees:</label>
                 <input type="number" class="form-control" id="closingFees" name="closingFees">
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label for="shippingFees" class="form-label">Shipping Fees:</label>
                 <input type="number" class="form-control" id="shippingFees" name="shippingFees">
@@ -48,15 +48,15 @@
             const sellingPrice = parseFloat(document.getElementById("sellingPrice").value);
 
             const gst = parseFloat(document.getElementById("gst").value);
-            const referralFees = parseFloat(document.getElementById("referralFees").value);
-            const closingFees = parseFloat(document.getElementById("closingFees").value);
+            const amazonFees = parseFloat(document.getElementById("amazonFees").value);
+            // const closingFees = parseFloat(document.getElementById("closingFees").value);
             const shippingFees = parseFloat(document.getElementById("shippingFees").value);
 
             // Calculate GST amount
             const gstAmount = sellingPrice * (gst / 100);
 
             // Calculate total expenses
-            const totalExpenses = referralFees + closingFees + shippingFees;
+            const totalExpenses = amazonFees + shippingFees;
 
             // Calculate net selling price
             const netSellingPrice = sellingPrice - gstAmount;
